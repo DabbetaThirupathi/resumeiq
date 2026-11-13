@@ -2,6 +2,8 @@
 
 ![Python](https://img.shields.io/badge/Python-3.10+-blue) ![Flask](https://img.shields.io/badge/Flask-3.x-black) ![scikit-learn](https://img.shields.io/badge/scikit--learn-ML-orange) ![Tests](https://img.shields.io/badge/tests-20%20passing-brightgreen)
 
+**🔗 Live demo: [resumeiq-v5v2.onrender.com](https://resumeiq-v5v2.onrender.com)** (free hosting, so the first load can take up to a minute)
+
 ![ResumeIQ screenshot](docs/screenshot.png)
 
 ResumeIQ compares a resume against a job description the way an Applicant Tracking System (ATS) does. It gives an **ATS match score**, the **skills you match and miss**, a **resume checklist**, and **tips to improve**. Recruiters can also upload many resumes and **rank candidates** for a role.
