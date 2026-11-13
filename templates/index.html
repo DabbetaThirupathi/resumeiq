@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ResumeIQ · AI Resume Screener</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand"><span class="logo">IQ</span> ResumeIQ</div>
+    <nav class="tabs">
+      <button class="tab active" data-tab="candidate">Candidate mode</button>
+      <button class="tab" data-tab="recruiter">Recruiter mode</button>
+    </nav>
+  </header>
+
+  <main class="container">
+    <!-- Candidate mode -->
+    <section id="candidate" class="panel active">
+      <h1>Check your resume against a job</h1>
+      <p class="sub">Upload your resume and paste the job description. Get an ATS score, missing skills and tips to improve.</p>
+
+      <form id="analyze-form" class="grid">
+        <div class="card">
+          <h2>1. Your resume</h2>
+          <label class="drop" id="drop">
+            <input type="file" id="resume-file" name="resume" accept=".pdf,.docx,.txt">
+            <span id="file-label">Drop a PDF / DOCX / TXT here or click to browse</span>
+          </label>
+          <p class="or">or paste resume text</p>
+          <textarea id="resume-text" name="resume_text" rows="8" placeholder="Paste resume text..."></textarea>
+        </div>
+        <div class="card">
+          <h2>2. Job description</h2>
+          <textarea id="jd-text" name="job_description" rows="15" placeholder="Paste the job description..." required></textarea>
+        </div>
+        <div class="actions">
+          <button type="submit" class="btn" id="analyze-btn">Analyze resume</button>
+        </div>
+      </form>
+
+      <div id="error" class="error hidden"></div>
+
+      <div id="results" class="hidden">
+        <div class="score-row">
+          <div class="card score-card">
+            <div class="ring" id="ring"><span id="score">0</span></div>
+            <div>
+              <div class="verdict" id="verdict"></div>
+              <div class="muted">Overall ATS match</div>
+            </div>
+          </div>
+          <div class="card metric"><div class="metric-val" id="skill-score">0%</div><div class="muted">Skill match</div></div>
+          <div class="card metric"><div class="metric-val" id="sim-score">0%</div><div class="muted">Content similarity</div></div>
+          <div class="card metric"><div class="metric-val" id="word-count">0</div><div class="muted">Words</div></div>
+        </div>
+
+        <div class="grid">
+          <div class="card">
+            <h3>Matched skills</h3>
+            <div class="chips" id="matched"></div>
+            <h3>Missing skills</h3>
+            <div class="chips" id="missing"></div>
+            <h3>Other skills on your resume</h3>
+            <div class="chips" id="extra"></div>
+          </div>
+          <div class="card">
+            <h3>Resume checklist</h3>
+            <ul class="checklist" id="checklist"></ul>
+            <h3>Suggestions</h3>
+            <ol class="tips" id="tips"></ol>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Recruiter mode -->
+    <section id="recruiter" class="panel">
+      <h1>Rank candidates for a role</h1>
+      <p class="sub">Upload several resumes and one job description. ResumeIQ ranks them by fit.</p>
+      <form id="rank-form" class="grid">
+        <div class="card">
+          <h2>Resumes</h2>
+          <label class="drop">
+            <input type="file" id="rank-files" name="resumes" accept=".pdf,.docx,.txt" multiple>
+            <span id="rank-label">Select multiple resumes</span>
+          </label>
+        </div>
+        <div class="card">
+          <h2>Job description</h2>
+          <textarea name="job_description" rows="8" placeholder="Paste the job description..." required></textarea>
+        </div>
+        <div class="actions"><button type="submit" class="btn">Rank candidates</button></div>
+      </form>
+      <div id="rank-error" class="error hidden"></div>
+      <div class="card hidden" id="rank-results">
+        <table>
+          <thead><tr><th>#</th><th>Candidate</th><th>Score</th><th>Verdict</th><th>Missing skills</th></tr></thead>
+          <tbody id="rank-body"></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">ResumeIQ · Built with Flask &amp; scikit-learn</footer>
+  <script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>

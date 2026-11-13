@@ -1,0 +1,65 @@
+:root {
+  --bg: #f6f7fb;
+  --card: #ffffff;
+  --text: #1c2033;
+  --muted: #6b7080;
+  --primary: #4f46e5;
+  --primary-dark: #4338ca;
+  --good: #16a34a;
+  --bad: #dc2626;
+  --border: #e5e7ef;
+}
+* { box-sizing: border-box; }
+body { margin: 0; font-family: "Segoe UI", system-ui, -apple-system, sans-serif; background: var(--bg); color: var(--text); }
+.topbar { display: flex; justify-content: space-between; align-items: center; padding: 14px 32px; background: var(--card); border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 2; }
+.brand { font-weight: 700; font-size: 1.2rem; display: flex; align-items: center; gap: 10px; }
+.logo { background: var(--primary); color: #fff; border-radius: 8px; padding: 4px 8px; font-size: .9rem; }
+.tabs { display: flex; gap: 6px; }
+.tab { border: 1px solid var(--border); background: transparent; padding: 8px 14px; border-radius: 8px; cursor: pointer; font-size: .9rem; }
+.tab.active { background: var(--primary); color: #fff; border-color: var(--primary); }
+.container { max-width: 1100px; margin: 0 auto; padding: 28px 20px 60px; }
+.panel { display: none; }
+.panel.active { display: block; }
+h1 { margin: 0 0 6px; font-size: 1.7rem; }
+.sub { color: var(--muted); margin: 0 0 22px; }
+.grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-bottom: 18px; }
+.card { background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 20px; }
+.card h2 { font-size: 1.05rem; margin: 0 0 12px; }
+.card h3 { font-size: .95rem; margin: 18px 0 8px; }
+.card h3:first-child { margin-top: 0; }
+textarea { width: 100%; border: 1px solid var(--border); border-radius: 10px; padding: 12px; font: inherit; resize: vertical; }
+textarea:focus { outline: 2px solid var(--primary); border-color: transparent; }
+.drop { display: block; border: 2px dashed var(--border); border-radius: 12px; padding: 26px; text-align: center; color: var(--muted); cursor: pointer; transition: .2s; }
+.drop:hover, .drop.drag { border-color: var(--primary); color: var(--primary); }
+.drop input { display: none; }
+.or { text-align: center; color: var(--muted); font-size: .85rem; margin: 12px 0; }
+.actions { grid-column: 1 / -1; text-align: center; }
+.btn { background: var(--primary); color: #fff; border: 0; border-radius: 10px; padding: 13px 34px; font-size: 1rem; cursor: pointer; }
+.btn:hover { background: var(--primary-dark); }
+.btn:disabled { opacity: .6; cursor: wait; }
+.error { background: #fee2e2; color: var(--bad); border-radius: 10px; padding: 12px 16px; margin-bottom: 18px; }
+.hidden { display: none !important; }
+.score-row { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 18px; margin-bottom: 18px; }
+.score-card { display: flex; align-items: center; gap: 20px; }
+.ring { --p: 0; width: 96px; height: 96px; border-radius: 50%; display: grid; place-items: center; background: conic-gradient(var(--ring-color, var(--primary)) calc(var(--p) * 1%), #eceef5 0); }
+.ring span { background: var(--card); width: 76px; height: 76px; border-radius: 50%; display: grid; place-items: center; font-size: 1.5rem; font-weight: 700; }
+.verdict { font-size: 1.25rem; font-weight: 700; }
+.muted { color: var(--muted); font-size: .88rem; }
+.metric { display: flex; flex-direction: column; justify-content: center; }
+.metric-val { font-size: 1.6rem; font-weight: 700; }
+.chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.chip { padding: 5px 11px; border-radius: 999px; font-size: .82rem; background: #eef0f7; }
+.chip.ok { background: #dcfce7; color: #166534; }
+.chip.no { background: #fee2e2; color: #991b1b; }
+.checklist { list-style: none; padding: 0; margin: 0; columns: 2; }
+.checklist li { padding: 4px 0; font-size: .9rem; }
+.tips { padding-left: 20px; margin: 0; }
+.tips li { margin-bottom: 8px; font-size: .92rem; line-height: 1.45; }
+table { width: 100%; border-collapse: collapse; }
+th, td { text-align: left; padding: 10px; border-bottom: 1px solid var(--border); font-size: .92rem; }
+th { color: var(--muted); font-weight: 600; }
+.footer { text-align: center; color: var(--muted); font-size: .85rem; padding: 20px; }
+@media (max-width: 800px) {
+  .grid, .score-row { grid-template-columns: 1fr; }
+  .topbar { flex-direction: column; gap: 10px; }
+}

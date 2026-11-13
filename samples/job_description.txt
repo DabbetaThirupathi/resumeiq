@@ -1,0 +1,16 @@
+Software Engineer - Full Stack (Fresher)
+
+We are hiring graduate engineers to build web applications for our clients.
+
+Responsibilities:
+- Develop responsive front-end interfaces using React, HTML and CSS
+- Build REST APIs with Node.js and Express or Spring Boot
+- Design schemas and write queries for MySQL and MongoDB
+- Write unit tests and participate in code reviews using Git
+- Work in an Agile team and deploy applications with Docker on AWS
+
+Requirements:
+- B.Tech / B.E. in Computer Science or Information Technology
+- Strong fundamentals in Data Structures, Algorithms, OOP and DBMS
+- Proficiency in Java or JavaScript
+- Good communication skills

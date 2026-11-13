@@ -1,0 +1,33 @@
+Arjun Kumar
+arjun.kumar@example.com | +91 98765 43210 | linkedin.com/in/arjunkumar | github.com/arjunkumar
+
+EDUCATION
+B.Tech in Information Technology, ABC Institute of Technology, 2022-2026, CGPA 8.4
+
+TECHNICAL SKILLS
+Languages: Java, JavaScript, Python, SQL
+Web: React, HTML, CSS, Node.js, Express, REST APIs
+Databases: MySQL, MongoDB
+Tools: Git, Docker, AWS, Postman
+Fundamentals: Data Structures, Algorithms, OOP, DBMS
+
+PROJECTS
+HireTrack - Campus Placement Portal (React, Node.js, Express, MongoDB)
+- Built a full-stack portal used by 300+ students to apply to placement drives
+- Implemented JWT authentication and role-based access for students and admins
+- Reduced manual eligibility checks by 80% with automatic CGPA and branch filters
+
+ResumeIQ - AI Resume Screener (Python, Flask, scikit-learn)
+- Developed an NLP pipeline using TF-IDF and cosine similarity to score resumes
+- Deployed the application with Docker; wrote unit tests with pytest
+
+EXPERIENCE
+Web Development Intern, XYZ Solutions (May 2025 - July 2025)
+- Developed REST APIs in Spring Boot and optimized SQL queries, improving response time by 35%
+- Worked in an Agile team with daily stand-ups and code reviews
+
+CERTIFICATIONS
+AWS Cloud Practitioner; Java Programming (NPTEL)
+
+ACHIEVEMENTS
+Finalist, Smart India Hackathon 2025
